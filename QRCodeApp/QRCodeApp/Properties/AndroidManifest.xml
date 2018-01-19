@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="QRCodeApp.QRCodeApp" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="QRCodeApp.QRCodeApp" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-sdk android:minSdkVersion="16" />
 	<application android:label="QRCodeApp">
 		<meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode" />

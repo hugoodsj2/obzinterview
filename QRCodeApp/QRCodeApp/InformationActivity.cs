@@ -51,15 +51,23 @@ namespace QRCodeApp
             // EmptyString return
             string information = String.Empty;
 
-            // Send the request to the server and wait for the response:
-            using (WebResponse response = request.GetResponse())
+            try
             {
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                // Send the request to the server and wait for the response:
+                using (WebResponse response = request.GetResponse())
                 {
-                    var content = reader.ReadToEnd();
-                    information = content;
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var content = reader.ReadToEnd();
+                        information = content;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                information = "QR Code not found";
+            }
+            
 
             return information;
         }
