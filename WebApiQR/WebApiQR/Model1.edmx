@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="qrcode_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="INFORMATIONS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_qr" Type="int" />
+          <Property Name="informations" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="QR_CODE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="qr_local" Type="varchar" MaxLength="100" />
+          <Property Name="qr_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__INFORMATI__id_qr__5535A963">
+          <End Role="QR_CODE" Type="Self.QR_CODE" Multiplicity="0..1" />
+          <End Role="INFORMATIONS" Type="Self.INFORMATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QR_CODE">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="INFORMATIONS">
+              <PropertyRef Name="id_qr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="qrcode_dbModelStoreContainer">
+          <EntitySet Name="INFORMATIONS" EntityType="Self.INFORMATIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QR_CODE" EntityType="Self.QR_CODE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__INFORMATI__id_qr__5535A963" Association="Self.FK__INFORMATI__id_qr__5535A963">
+            <End Role="QR_CODE" EntitySet="QR_CODE" />
+            <End Role="INFORMATIONS" EntitySet="INFORMATIONS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="qrcode_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="INFORMATIONS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_qr" Type="Int32" />
+          <Property Name="informations1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="QR_CODE" Relationship="Self.FK__INFORMATI__id_qr__5535A963" FromRole="INFORMATIONS" ToRole="QR_CODE" />
+        </EntityType>
+        <EntityType Name="QR_CODE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="qr_local" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="qr_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="INFORMATIONS" Relationship="Self.FK__INFORMATI__id_qr__5535A963" FromRole="QR_CODE" ToRole="INFORMATIONS" />
+        </EntityType>
+        <Association Name="FK__INFORMATI__id_qr__5535A963">
+          <End Role="QR_CODE" Type="Self.QR_CODE" Multiplicity="0..1" />
+          <End Role="INFORMATIONS" Type="Self.INFORMATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QR_CODE">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="INFORMATIONS">
+              <PropertyRef Name="id_qr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="qrcode_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="INFORMATIONS" EntityType="Self.INFORMATIONS" />
+          <EntitySet Name="QR_CODE" EntityType="Self.QR_CODE" />
+          <AssociationSet Name="FK__INFORMATI__id_qr__5535A963" Association="Self.FK__INFORMATI__id_qr__5535A963">
+            <End Role="QR_CODE" EntitySet="QR_CODE" />
+            <End Role="INFORMATIONS" EntitySet="INFORMATIONS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="qrcode_dbModelStoreContainer" CdmEntityContainer="qrcode_dbEntities">
+          <EntitySetMapping Name="INFORMATIONS">
+            <EntityTypeMapping TypeName="qrcode_dbModel.INFORMATIONS">
+              <MappingFragment StoreEntitySet="INFORMATIONS">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_qr" ColumnName="id_qr" />
+                <ScalarProperty Name="informations1" ColumnName="informations" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QR_CODE">
+            <EntityTypeMapping TypeName="qrcode_dbModel.QR_CODE">
+              <MappingFragment StoreEntitySet="QR_CODE">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="qr_local" ColumnName="qr_local" />
+                <ScalarProperty Name="qr_name" ColumnName="qr_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,29 @@
+﻿@model WebApiQR.QR_CODE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>QR_CODE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.qr_local)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.qr_local)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.qr_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.qr_name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

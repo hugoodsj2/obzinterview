@@ -1,0 +1,46 @@
+﻿@model WebApiQR.INFORMATIONS
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>INFORMATIONS</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id_qr, "QR_CODE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("id_qr", String.Empty)
+            @Html.ValidationMessageFor(model => model.id_qr)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.informations1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.informations1)
+            @Html.ValidationMessageFor(model => model.informations1)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

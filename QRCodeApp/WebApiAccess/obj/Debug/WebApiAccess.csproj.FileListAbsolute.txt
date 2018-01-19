@@ -1,0 +1,11 @@
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\bin\Debug\WebApiAccess.dll
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\bin\Debug\WebApiAccess.pdb
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\bin\Debug\WebApiAccess.WebApiAccess.apk
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\bin\Debug\WebApiAccess.WebApiAccess-Signed.apk
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\obj\Debug\WebApiAccess.csprojResolveAssemblyReference.cache
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\obj\Debug\WebApiAccess.dll
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\obj\Debug\WebApiAccess.pdb
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\obj\Debug\android\bin\WebApiAccess.WebApiAccess.apk
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\obj\Debug\res\values\strings.xml
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\obj\Debug\R.cs.flag
+c:\users\hugol\documents\visual studio 2015\Projects\QRCodeApp\WebApiAccess\obj\Debug\uploadflags.txt
